@@ -1,0 +1,65 @@
+.update-button {
+    background-color: green;
+    border: 0;
+    color: white;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 1vw;
+    padding: 6%;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+.table-wrapper {
+    overflow: auto;
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 230);
+    background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+    background-position: 0 0, 100%, 0 0, 100%;
+    background-attachment: local, local, scroll, scroll;
+}
+
+.update-table-container {
+    margin-left: -5%;
+}
+  
+.table-event {
+    overflow: auto;
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 230);
+    background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+    background-position: 0 0, 100%, 0 0, 100%;
+    background-attachment: local, local, scroll, scroll;
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+    font-family: sans-serif;
+    background-color: rgb(5, 145, 210);
+    padding: 5%;
+}
+
+tr {
+    border-bottom: 1px solid;
+}
+  
+th {
+    background-color: rgb(19, 77, 224);
+    color: #fff;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    text-align: center;
+}
+  
+td {
+    text-align: center;
+    font-size: 1.5vw;
+}
+
+.empty-space {
+    margin-top: 1%;
+    padding-bottom: 1%;
+}

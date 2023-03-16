@@ -1,0 +1,90 @@
+<style>
+    body {
+        font-family: sans-serif;
+    }
+    .map-layer {
+        height: 100%;
+        width:  100%;
+    }
+</style>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <h1>View current location</h1>
+    <div class="map-layer" id="map-layer"></div>
+</html>
+
+<script>
+
+</script>
+
+<script type="text/javascript">
+    let map;
+    let feedback = "TEST";
+    let currentLatitude = 0.0;
+    let currentLongitude = 0.0;
+    let centerCoordinates = {
+        lat: currentLatitude, 
+        lng: currentLongitude
+    };
+    let currentLocation = {
+        lat: 0.0,
+        lng: 0.0,
+        IP: "default"
+    }
+    function initMap() {
+        /*$.get("https://ipinfo.io", function(response) {
+            //alert(response.ip);
+            feedback = response.ip;
+        }, "json")*/
+        updateLocation();
+        let mapLayer = document.getElementById("map-layer");
+        //let centerCoordinates = new google.maps.LatLng(currentLatitude, currentLongitude);
+
+        let defaultOptions = { 
+            zoom: 12,
+            center: centerCoordinates,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        map = new google.maps.Map(mapLayer, defaultOptions);
+        let marker = new google.maps.Marker({
+            position: centerCoordinates, 
+            map: map
+        });
+        marker.setMap(map);
+        google.maps.event.addListener(marker, 'click', function() {
+            infoWindow.open(map, marker);
+        });
+        marker.setPosition(currentLocation);
+        map.setCenter(currentLocation);
+    }
+    function updateLocation() {
+        if ("geolocation" in navigator){
+            navigator.geolocation.getCurrentPosition(function(position){ 
+                currentLatitude = position.coords.latitude;
+                currentLongitude = position.coords.longitude;
+                centerCoordinates = {
+                    lat: currentLatitude, 
+                    lng: currentLongitude
+                };
+                let infoWindowHTML = "Latitude: " + currentLatitude + "<br>Longitude: " + currentLongitude + "<br>IP: " +  feedback;
+                let infoWindow = new google.maps.InfoWindow({
+                    map: map, 
+                    content: infoWindowHTML
+                });
+                currentLocation = { 
+                    lat: currentLatitude, 
+                    lng: currentLongitude, 
+                    //IP: JSON.stringify(feedback)
+                };
+                infoWindow.setPosition(currentLocation);
+            });
+        }
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoh5mk6Q4LCq-EIC6GbuIusljgc7tVGQc&callback=initMap"
+async defer></script>

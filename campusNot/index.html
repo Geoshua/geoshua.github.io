@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles_pages/style_login_page.css">
+        <link rel="icon" href="logo_cd1.jpeg">
+    </head>
+    <body>
+        <title>
+            CampusNot
+        </title>
+        <div class="top-section"></div>
+        <img class="logo-img" name="logo_cd1" id="logo_cd1" src="logo_cd1.jpeg">
+        <p><a href="map.html">View Map</a></p><br>
+        <div class="login-container">
+            <div class="form-container">
+                <form name="loginStudentForm" onsubmit="return validateForm()" action="security_protocols/login_gateway.php" method="post">
+                    <div class="form-content">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="wblake" required>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="123" required>
+                        <input type="checkbox" id="remember_user" name="remember_user">
+                        <label type="checkbox" for="remember_user">Remember me</label>
+                        <button type="submit">Log in</button>
+                    </div>
+                </form>
+            </div>
+            <p><a href="dummylink.html" target="_blank">Forgot Password?</a></p>
+            <p><a href="imprint.html" target="_blank">Imprint</a></p>
+        </div>
+    </body>
+</html>
+
+<script>
+    let user = document.getElementById("username");
+    let pass = document.getElementById("password");
+    function validateForm() {   
+        if(user.length > 12 || user.length < 2) {
+            alert("Username is invalid!");
+            return false;
+        }
+        if(pass.length < 1) {
+            alert("Please provide a password!");
+            return false;
+        }
+    }
+</script>
