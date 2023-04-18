@@ -1,3 +1,8 @@
+<style>
+  #quickCheckIn {
+    margin-left: 40%;
+  }
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +12,7 @@
   <title>Gains</title>
   <link rel="icon" href="./img/logo.png" sizes="2000x2000" type="image/png">
   <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/tracker.css">
 </head>
 <body>
   <nav id="topNav">
@@ -21,6 +27,20 @@
       </ul>
     </div>
   </nav>
+  
+  <div class="overlay" id="tracker-div">
+      <div id="workout"></div>
+      </div>
+  </div>
+  <div class="overlay" id="quickCheckIn-div">
+    <div class="container" id="quickCheckIn">
+      <div id="bar">
+        <h1>User Name</h1>
+        <img src ="img/QR example.png" >
+        <span onclick="toggleOverlay('quickCheckIn-div')">Turn Off</p>
+      </div>
+    </div>
+  </div>
   <section id="foo">
     <div class="container">
       <h1>Weekly Statistics</h1>
@@ -29,14 +49,14 @@
   <section id="foo">
     <div class="container">
       <h1>Quick start</h1>
-      <a href='emptyTR.html'>Start Empty Workout</a>
-      <a href="#">Quick CheckIn</a>
+      <a onclick="toggleOverlay('tracker-div')">Empty Workout</a>
+      <a onclick="toggleOverlay('quickCheckIn-div')">Quick CheckIn</a>
     </div>
   </section>
   <section id="foo">
     <div class="container">
       <h1>Routines</h1>
-      <a href="newRoutine.html">Create New Routine</a>
+      <a href="newRoutine.html">New Routine</a>
       <a href="feed.html">Explore</a>
     </div>
     <div class="container">
@@ -69,5 +89,12 @@
     <p>This website is a student project work and does not reflect Constructor University Bremen opinions or views.
       It is not a  part of the official Constructor University Bremen online presence.</p>
   </footer>
+  <script src="js/tracker.js" type="module"></script>
+  <script>
+    function toggleOverlay(toggleItem) {
+        var item = document.getElementById(toggleItem);
+        item.style.display = (item.style.display == "none" ? "block" : "none");
+    }
+  </script>
 </body>
 </html>
