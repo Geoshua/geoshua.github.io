@@ -1,0 +1,369 @@
+<style>
+  .left-container {
+    float:left;
+    width:60%;
+    padding-right:20px;
+  }
+  .right-container{
+    float:right;
+    width:40%
+  }
+  .section-container{
+    width: 50%;
+    height:70%;
+    margin: 0 auto;
+    overflow:hidden;
+    padding: 40 40;
+    background-color: #35353f;
+  }
+  .page-container{
+    width: 100%;
+  }
+  .section-container h1{
+    font-size: 50px;
+    line-height: 1.5;
+    text-align:left;
+  }
+  .homepage-button{
+    padding: 10 50px;
+    background-color:#ff4057;
+    color:#282634;
+    margin: 10px 10px;
+    cursor:pointer;
+    width: 40%;
+    text-align: center;
+    border-radius:10px;
+    font-weight:bold;
+  }
+  .homepage-button:hover{
+    background-color: #282634;
+    color:#ff4057;
+  }
+  .homepage-container{
+    background-size:cover ;
+    background-image: url("./img/background.png");
+    background-position:center;
+    background-attachment:fixed;
+    height:auto;
+    min-height:500px;
+  }
+  .homepage-background{
+    background:linear-gradient(rgba(65, 9, 9, 0.8),rgba(25, 25, 42, 0.8));
+  }
+  table td{
+    align-items: center;
+    text-align: center;
+    line-height: 1.5;
+    padding: 40px 20px;
+    vertical-align: top;
+  }
+  table img{
+    padding-bottom:20;
+  }
+  li{
+    list-style-type: disc;
+    font-size:20px;
+    list-style-position: inside;
+    text-align: left;
+    padding-left:20px;
+  }
+  .grid-four td{
+    width: 50%;
+  }
+  .column-three td{
+    height:120%;
+    width:33%;
+  }
+  .column-three h2{
+    padding-bottom:10;
+  }
+  .no-pic {
+    padding-top :20;
+    vertical-align: center;
+  }
+  .backg td{
+    background-color:#732e36;
+  }
+  .hl {
+    color:#ff4057;
+  }
+
+  @media screen and (max-width:1366px) {
+    .section-container {
+      width:100%;
+    } 
+  }
+  @media only screen and (max-device-width:1366px) {
+    .homepage-background {
+      background-attachment: scroll;
+    }
+
+  }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gains</title>
+  <link rel="icon" href="./img/icon.png" sizes="2000x2000" type="image/png">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <script src="https://kit.fontawesome.com/f1fe956918.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav id="topNav" class="topNav">
+    <img src="./img/logo.png" alt="GAINS" width="360px" style="padding-right:30px;object-fit:cover" >
+    <div class="container">
+        <a onclick="toggleControl('homepage-container');toggleActive(this)" class="active">Homepage</a>
+        <a onclick="toggleControl('contact-container'),toggleActive(this)">Contact</a>
+        <div class="topNav-right">
+          <a onclick="toggleControl('login-container');toggleActive(this)">Sign In</a>
+          <a href="javascript:void(0);" class="icon" onclick="navMedia()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+        
+    </div>
+  </nav>
+  <!-- Homepage-->
+  <div class="homepage-container page-container" id="homepage-container" style="padding:0;">
+    <div class="homepage-background">
+      <div class="homepage-content">
+        <div class="section-container" style="height:80%;padding-top:7%;">
+          <div class="left-container">
+            <h1><span class="hl">G</span>ym <span class="hl">A</span>ssistance and <span class="hl">I</span>ntegrated <span class="hl">N</span>utrition <span class="hl">S</span>ystem</h1><br>
+            <p>The ultimate fitness tracker for all your fitness lifestyle needs, whether it's a jog in the park, lifting weights, or a game of badminton. Our app comes with a calorie tracker and a stats page to track your health goals. Connect with your friends and see each others progress. Find local gyms and schedule appointments with them. Get fit today!</p><br>
+            <div class="homepage-button">Get Started!</div>
+          </div>
+          <div class="right-container">
+            <img src="./img/insert_img3.jpg" alt="lifting" height="100%">
+          </div>
+        </div>
+        <div class="section-container" style="height:140%;">
+          <h1>Set <span class="hl">G</span>oals and <span class="hl">T</span>rack Progress</h1>
+          <p>Set achievable goals and track your progress. Our app is user-friendly and easy to use. Analyze your statistics to improve your workouts and maintain a healthy lifestyle.</p>
+          <table class="grid-four">
+            <tr>
+              <td>
+                <img src="./img/placeholder.jpg" alt="placeholder" height="300vh" width="300vh">
+                <h2>Real-Time Updates</h2>
+                <p>Our fitness tracker fetches real-time data from your smart devices to keep you on track and motivated throughout the day.</p>
+              </td>
+              <td>
+                <img src="./img/placeholder.jpg" alt="placeholder" height="300vh" width="300vh">
+                <h2>Custom Workouts</h2>
+                <p>Create your own workout routine or choose from our selection of workouts, including cardio, weight lifting, yoga, and even sports specific training programs.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="./img/placeholder.jpg" alt="placeholder" height="300vh" width="300vh">
+                <h2>Track Your Progress</h2>
+                <p>Track your progress and see your results in an easy-to-read graph format.</p>
+              </td>           
+              <td>
+                <img src="./img/placeholder.jpg" alt="placeholder" height="300vh" width="300vh">
+                <h2>Monitor Your Health</h2>
+                <p>Monitor your health by tracking your daily steps and calorie intake. Our app makes it simple and easy to make healthier choices.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="section-container"style="height:85%;">
+          <h1><span class="hl">F</span>itness <span class="hl">S</span>tats</h1>
+          <p>Our app's stats page provides a detailed history of your activity, including your workout sessions, calorie intake, and other health stats. Analyze your progress and make adjustments to reach your fitness goals.</p>
+          <table class="column-three">
+            <tr>
+              <td>
+                <img src="./img/placeholder.jpg" alt="placeholder" height="200vh" width="200vh">
+                <h2>Activity Tracker</h2>
+                <p>Our app's activity tracker provides detailed information on your workout sessions and activity levels.</p>
+              </td>           
+              <td>
+                <img src="./img/placeholder.jpg" alt="placeholder" height="200vh" width="200vh">
+                <h2>Graphical Representations</h2>
+                <p>Our app provides graphical representations of your activity and progress, so you can easily see how far you've come.</p>
+              </td>           
+              <td>
+                <img src="./img/placeholder.jpg" alt="placeholder" height="200vh" width="200vh">
+                <h2>Health Stats</h2>
+                <p>Monitor other health stats, including blood pressure, weight, and BMI, to make informed decisions for a healthier life.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="section-container"style="height:65%;">
+          <h1>The <span class="hl">C</span>alorie Tracker</h1>
+          <p>Use our app's calorie tracker to monitor food intake and maintain a healthy diet. Our app has an extensive food database with detailed nutritional information to make tracking simple and easy. Analyze your progress and adjust your diet for optimal health.</p>
+          <table class="column-three no-pic">
+            <td>
+              <h2>Calorie Tracking Tool</h2>
+              <p>Use our calorie tracking tool to monitor food intake and maintain a healthy diet.</p>
+            </td>           
+            <td>
+              <h2>Extensive Food Database</h2>
+              <p>Our app has an extensive food database with detailed nutritional information to make tracking simple and easy.</p>
+            </td>           
+            <td>
+              <h2>Diet Analysis</h2>
+              <p>Analyze your progress and adjust your diet for optimal health.</p>
+            </td>
+          </table>
+        </div>
+        <div class="section-container"style="height:60%;">
+          <h1>Connect with <span class="hl">F</span>riends</h1>
+          <p>Connect with your friends and see their workout sessions to motivate and encourage each other. Join groups to compete with friends for a little extra challenge.</p>
+          <table class="column-three no-pic backg">
+            <tr>
+              <td>
+                <h2>Friends</h2>
+                <p>Add friends to your social network to stay motivated and encourage each other.</p>
+              </td>           
+              <td>
+                <h2>Groups</h2>
+                <p>Join workout groups to connect with like-minded individuals and compete in challenges.</p>
+              </td>           
+              <td>
+                <h2>Share Workouts</h2>
+                <p>Share your workout sessions with friends to give and receive encouragement.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="section-container" style="height:65%;">
+          <h1>Find Local <span class="hl">G</span>yms</h1>
+          <p>Looking for a new gym? Use our app's gym finder to locate gyms near you. Our search tool provides detailed information on gym facilities and amenities, including price ranges, class schedules, and more.</p>
+        
+          <table class="column-three no-pic">
+            <tr>
+              <td>
+                <h2>Gym Finder Tool</h2>
+                <p>Use our gym finder tool to locate gyms near you. We provide detailed information on gym facilities and amenities.</p>
+              </td>
+              <td>
+                <h2>Gym Amenities</h2>
+                <ul>
+                  <li>Weightlifting equipment</li>
+                  <li>Cardio machines</li>
+                  <li>Showers and lockers</li>
+                </ul>
+              </td>           
+              <td>
+                <h2>Classes and Schedules</h2>
+                <ul>
+                  <li>Yoga classes</li>
+                  <li>Cycling classes</li>
+                  <li>Pilates classes</li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="section-container"style="height:65%;">
+          <h1>Personal <span class="hl">T</span>raining and <span class="hl">O</span>nline Coaching</h1>
+          <p>Our app offers professional personal training and online coaching services targeted to your specific fitness goals. Get personalized training plans, nutrition coaching, and added accountability benefits.</p>
+          <ul style="padding:20px 10;">
+            <li>Personalized Training</li>
+            <li>Online Coaching</li>
+            <li>Nutrition Coaching</li>
+            <li>And so much more!</li>
+          </ul>
+          <div class="homepage-button">Learn More</div>
+        </div>
+        <div class="section-container" style="height:100%;">
+          <h1>Joi<span class="hl">n</span> Today</h1>
+          <p>Get ready to reach your fitness goals with our app. Our user-friendly interface, extensive features, and online coaching services make our app the perfect fitness tracker. Join today and watch as you hit milestone after milestone!</p>
+          <table class="column-three">
+            <tr>
+              <td>
+                <img src="./img/placeholder.jpg" alt="placeholder" height="200vh" width="200vh">
+                <h2>Mobile App</h2>
+                <p>Our mobile app is available on both Android and iPhone for easy access to your fitness tracker.</p>
+              </td>           
+              <td>
+                <img src="./img/placeholder.jpg" alt="placeholder" height="200vh" width="200vh">
+                <h2>Online Coaching</h2>
+                <p>Get personalized training plans, nutrition coaching, and added accountability benefits with our online coaching services.</p>
+              </td>           
+              <td>
+                <img src="./img/placeholder.jpg" alt="placeholder" height="200vh" width="200vh">
+                <h2>Hit Milestones</h2>
+                <p>Join today and watch as you hit milestone after milestone on your way to becoming your best self.</p>
+              </td>
+            </tr>
+          </table>
+          <div class="homepage-button">Sign Up Now!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Contact Page-->
+  <div class="contact-container page-container" id="contact-container" style="display:none;height:80%;">
+    <section id="foo">
+      <div id="fbforms" align="left">
+        <h1>Feedback Form</h1>
+        <form action="#" method="post">
+          <label>Feedback: <input type="text"/></label>
+          <label>Feedback Type: </label>
+          <select name="feedbacktype">
+            <option value="#">Select</option>
+            <option value="bug">Bug</option>
+            <option value="suggestion">Suggestion</option>
+            <option value="userExp">User Experience</option>
+          </select>
+        </form>
+      </div>
+    </section>
+    <section id="foo">
+    <div class="container">
+      <h1>Contact Us at:</h1>
+      <p>questions@gains.com</p>
+      <p>(49) 176 0000 0000</p>
+      <h1>Social:</h1>
+      <p>Instagram @gainsapp</p>
+      <p>Facebook @gainsapp</p>
+      <p>LinkedIn @gainsapp</p>
+    </div>
+    </section>
+  </div>
+
+  <!--Login Page-->
+  <div class="login-container page-container"style="display:none;"id="login-container">
+    <div class="form-box">
+      <h1 id="login-title">Sign Up</h1>
+      <form action="">
+        <div class="input-group">
+          <div class="input-field" id="name-field">
+            <i class="fa-solid fa-user" ></i>
+            <input type="text" placeholder="Name" name="username" id="username">
+          </div>
+          <div class="input-field">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" placeholder="Email" name="email" id="email" required>
+          </div>
+          <div class="input-field">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Password" name="password" id="password" required>
+          </div>
+          <p>Lost password <a href="#">Click Here!</a></p>
+        </div>
+        <div class="button-field">
+          <button type="button" id="sign-up-button" name="submit-data" class="submit-button">Sign Up</button>
+          <button type="button" id="sign-in-button" class="submit-button disable">Sign In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <footer id="footermain">
+    <p>Copyright &copy; 2023 GAINS Website.</p>
+    <p>Imprint</p>
+    <p>This website is a student project work and does not reflect Constructor University Bremen opinions or views.
+      It is not a  part of the official Constructor University Bremen online presence.</p>
+  </footer>
+  <script src="js/app.js"type="module"></script>
+  <script src="js/page-control.js"></script>
+</body>
+</html>

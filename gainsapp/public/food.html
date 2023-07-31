@@ -1,0 +1,128 @@
+<style>
+  table {
+    cursor:pointer;
+    border:none;
+    border-collapse: collapse;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: #44444b;
+    max-width: 800px;
+    min-width:800px;
+    padding-bottom: 20px;
+  }
+  table td{
+    padding: 10px 20px;
+  }
+  #results-table tr:nth-child(even) {background-color:#414149 ;}
+  #results-table tr:hover {
+    background-color:#444451;
+  }
+  .food-list-container {
+    background: #444451; 
+    border-radius: 10px;
+    width: 700px;
+    border: 5px;
+    padding: 50px;
+    margin: 20px;
+    display:inline-block;
+    transition: 0.4;
+  }
+  .food-list-container p{
+    color:#95959b;
+    text-align: left;
+  }
+  #food-chart {
+    margin-left: auto;
+    margin-right:auto;
+  }
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gains</title>
+  <link rel="icon" href="./img/icon.png" sizes="2000x2000" type="image/png">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="js/app.js"type="module"></script>
+  <script src="https://kit.fontawesome.com/f1fe956918.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+  <nav class="topNav" id="topNav">
+    <img src="./img/logo.png" alt="GAINS" width="360px" style="padding-right:30px;object-fit:cover" >
+
+    <div class="container">
+      <a href="main.html">Home</a>
+      <a href="food.html" class="active">Foods</a>
+      <a href="stats.html">Stats</a>
+      <a href="feed.html">Social</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="contact.html">Contact</a>
+      <div class="topNav-right">
+        <a id="sign-out-button">Sign Out</a>
+        <a href="javascript:void(0);" class="icon" onclick="navMedia()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="page-container">
+    <nav id="sideNav">
+      <div class="container">
+        <ul>
+          <li><a href="#search-box"style="top:160px;background-color:#ff4057;">Search<i class="fa fa-magnifying-glass"style="text-indent:-1px;"></i></a></li>
+          <li><a href="#"style="top:230px;background-color:#fd8d9a;">Notification<i class="fa fa-fw fa-bell"style="text-indent:-1px;"></i></a></li>
+          <li><a href="#"style="top:300px;background-color:#ff4057;">Messages<i class="fa fa-fw fa-envelope"style="text-indent:-1px;"></i></a></li>
+          <li><a href="#"style="top:370px;background-color:#fd8d9a;">Explore<i class="fa fa-fw fa-compass"style="text-indent:-1px;"></i></a></li>
+          <li><a href="#"style="top:440px;background-color:#ff4057;">Profile<i class="fa fa-fw fa-user"style="text-indent:-1px;"></i></a></li>
+          <li><a href="#top"style="top:510px;background-color:#fd8d9a;">Top<i class="fa-solid fa-angles-up"style="text-indent:-1px;"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="foo">
+      <p>foods</p>
+      <canvas id="food-chart" style="width:100%;max-width:700px"></canvas>
+    </div>
+    <div id="foo"class="center-div">
+      <h1>Selected Foods</h1>
+      <div id="food-list-txt" class="food-list-container"style="inline-flex;">
+        <h2 ><i class="fa-regular fa-lemon fa-lg"></i> Nothing Logged Yet...</h2>
+        <p>Add a Food, exercise or biometric to see how they contribute to your daily targets or goals</p>
+      </div>
+        <table id="selected-foods">
+          <thead>
+          </thead>
+          <tbody>
+          </tbody>
+        </table> 
+      </div>
+    <div id="foo">
+      <div class="search-box-icon" id="search-box">
+        <form id="search-form">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="food-name" name="food-name" placeholder="Search all foods...">
+        </form>
+      </div>
+      <p id="results-txt">No Results yet...</p>
+      <table id="results-table">
+        <thead>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <footer id="footermain">
+    <p>Copyright &copy; 2023 GAINS Website.</p>
+    <p>Imprint</p>
+    <p>This website is a student project work and does not reflect Constructor University Bremen opinions or views.
+      It is not a  part of the official Constructor University Bremen online presence.</p>
+  </footer>  
+  <script src="js/page-control.js"></script>
+  <script src="js/foodtrack.js"type="module"></script>
+</body>
+</html>

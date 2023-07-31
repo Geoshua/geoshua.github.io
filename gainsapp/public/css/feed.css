@@ -1,0 +1,39 @@
+/* Change the link color on hover */
+#RHS-container {
+
+	margin-left: 10%;
+
+}
+
+h1 {
+	text-align: left;
+}
+#scroll-feed {
+	margin-left:30%;
+}
+.post-container {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left:auto;
+	margin-right: auto;
+	padding: 10px ;
+	padding-right: 10%;
+	padding-left: 2%;
+	margin: 10px;
+	background-color: #292834;	
+	width:400px;
+	place-items:left;
+	text-align: left;
+}
+
+.post-profile {
+	margin-top:0px;
+}
+
+.post-container p{
+	color: grey
+}
+
+.post-interaction {
+	padding-right: 10px;
+}

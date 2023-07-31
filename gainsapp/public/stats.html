@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gains</title>
+  <link rel="icon" href="./img/icon.png" sizes="2000x2000" type="image/png">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/stats.css">
+  <script src="js/app.js"type="module"></script>
+  <script src="js/page-control.js"></script>
+</head>
+<body>
+  <nav class="topNav" id="topNav">
+    <img src="./img/logo.png" alt="GAINS" width="360px" style="padding-right:30px;object-fit:cover" >
+
+    <div class="container">
+      <a href="main.html">Home</a>
+      <a href="food.html">Foods</a>
+      <a class="active" href="stats.html">Stats</a>
+      <a href="feed.html">Social</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="contact.html">Contact</a>
+      <div class="topNav-right">
+        <a id="sign-out-button">Sign Out</a>
+        <a href="javascript:void(0);" class="icon" onclick="navMedia()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div class="overlay" id="history-div">
+    <div id="history"></div>
+  </div>
+  <section id="foo">
+    <h1>Personal Statistics</h1>
+    <div class="grid">
+      <div class="graph">
+          <ul class="months">
+            <li>Jan</li>
+            <li>Feb</li>
+            <li>Mar</li>
+            <li>Apr</li>
+            <li>May</li>
+            <li>Jun</li>
+            <li>Jul</li>
+            <li>Aug</li>
+            <li>Sep</li>
+            <li>Oct</li>
+            <li>Nov</li>
+            <li>Dec</li>
+          </ul>
+          <ul class="days">
+            <li>Sun</li>
+            <li>Mon</li>
+            <li>Tue</li>
+            <li>Wed</li>
+            <li>Thu</li>
+            <li>Fri</li>
+            <li>Sat</li>
+          </ul>
+          <ul class="squares">
+            <!-- added via javascript -->
+          </ul>
+        </div>
+    </div>
+    <h1>Goals and Preferred Sports</h1>
+    <div id="wrapper"><div id="bar">
+      <h1>Exercise History</h1>
+      <a onclick="toggleOverlay('history-div')">See More</a>
+    </div>
+    <div id="bar">
+      <h1>Milestones</h1>
+      <a href="#">See More</a>
+    </div>
+    </div>
+    <div id="wrapper">
+      <div id="bar">
+        <h1>Bookmarked Training Plans</h1>
+      </div>
+      <div id="bar">
+        <h1>Bookmarked Trainers and Venues</h1>
+      </div>
+    
+    </div>
+  </section>
+  <footer id="footermain">
+    <p>Copyright &copy; 2023 GAINS Website.</p>
+    <p>Imprint</p>
+    <p>This website is a student project work and does not reflect Constructor University Bremen opinions or views.
+      It is not a  part of the official Constructor University Bremen online presence.</p>
+  </footer>
+  <script src="js/stats.js" type="module"></script>
+  <script>
+    function toggleOverlay(toggleItem) {
+      var item = document.getElementById(toggleItem);
+      item.style.display = (item.style.display == "none" ? "block" : "none");
+    }
+  </script>
+</body>
+</html>

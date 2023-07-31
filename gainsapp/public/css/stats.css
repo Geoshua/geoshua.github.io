@@ -1,0 +1,178 @@
+/* Calendar Related  CSS */
+
+:root {
+  --square-size: 15px;
+  --square-gap: 5px;
+  --week-width: calc(var(--square-size) + var(--square-gap));
+}
+
+.months { grid-area: months; }
+.days { grid-area: days; }
+.squares { grid-area: squares; }
+
+.graph {
+  display: inline-grid;
+  grid-template-areas: "empty months"
+                       "days squares";
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+}
+
+.months {
+  display: grid;
+  grid-template-columns: calc(var(--week-width) * 4) /* Jan */
+                         calc(var(--week-width) * 4) /* Feb */
+                         calc(var(--week-width) * 4) /* Mar */
+                         calc(var(--week-width) * 5) /* Apr */
+                         calc(var(--week-width) * 4) /* May */
+                         calc(var(--week-width) * 4) /* Jun */
+                         calc(var(--week-width) * 5) /* Jul */
+                         calc(var(--week-width) * 4) /* Aug */
+                         calc(var(--week-width) * 4) /* Sep */
+                         calc(var(--week-width) * 5) /* Oct */
+                         calc(var(--week-width) * 4) /* Nov */
+                         calc(var(--week-width) * 5) /* Dec */;
+}
+
+.days,
+.squares {
+  display: grid;
+  grid-gap: var(--square-gap);
+  grid-template-rows: repeat(7, var(--square-size));
+}
+
+.squares {
+  grid-auto-flow: column;
+  grid-auto-columns: var(--square-size);
+}
+
+
+/* Other styling */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 12px;
+}
+
+.graph {
+  padding: 20px;
+  margin: 20px;
+}
+
+.days li:nth-child(odd) {
+  visibility: hidden;
+}
+
+.squares li {
+  background-color: #fac6cc;
+}
+
+.squares li[data-level="1"] {
+  background-color: #fe818f;
+}
+
+.squares li[data-level="2"] {
+  background-color: #ff4057;
+}
+
+.squares li[data-level="3"] {
+  background-color: #8a232f;
+}
+
+ul {
+	list-style-type:none;
+}
+
+/* Exercise History CSS*/
+.history {
+	font-size: 14px;
+	border-collapse: collapse;
+	width: 400px;
+	align-items: center;
+	display:flexbox;
+	margin-top: 10%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.history,
+.history * {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color:#95959b;
+}
+
+.history th {
+	font-size:1.15em;
+	text-align: left;
+	font-weight: normal;
+	color: #ff4057;
+	background: #282634;
+}
+
+.history th,
+.history td {
+	padding:0.75em;
+}
+
+.history_entries .history_row {
+	background: #35353f;
+}
+
+.history_entries .history_row:nth-child(odd){
+	background: #414149;
+}
+
+.history_date,
+.history_workout,
+.history_duration {
+	display: inline-block;
+	box-sizing:border-box;
+	font-size: 1em;
+	height: 2.5em;
+	padding: 0.5em 0;
+	border: none;
+	outline:none;
+	background:none;
+}
+
+.history_duration {
+	text-align:right;
+}
+
+.history_button {
+	display:flex;
+	align-items: left;
+	justify-content:left;
+	background: none;
+	border: none;
+	outline: none;
+	color: red;
+	font-size: 1.5em;
+	margin-left:0.5em;
+	cursor: pointer;
+}
+
+.history_button:hover {
+	background: rgba(0,0,0,0.1);
+}
+
+.history_row_add {
+	border-top: 3px solid #282634;
+	border-bottom: 3px solid #282634;
+	background: #35353f;
+}
+.history_row_add td {
+	text-align:right;
+}
+
+.history_exit {
+	display:inline-block;
+	padding: 0.8em 1em;
+	color:#fa6576;
+	cursor: pointer;
+	text-align: left;
+}
+
+.history_exit:hover {
+	background:rgba(0,0,0,0.1);
+}
